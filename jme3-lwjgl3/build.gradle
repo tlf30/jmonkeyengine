@@ -16,6 +16,7 @@ dependencies {
     compile "org.lwjgl:lwjgl-openal:${lwjglVersion}"
     compile "org.lwjgl:lwjgl-opencl:${lwjglVersion}"
     compile "org.lwjgl:lwjgl-opengl:${lwjglVersion}"
+    compile "org.lwjgl:lwjgl-vulkan:${lwjglVersion}"
     runtime "org.lwjgl:lwjgl:${lwjglVersion}:natives-windows"
     runtime "org.lwjgl:lwjgl:${lwjglVersion}:natives-linux"
     runtime "org.lwjgl:lwjgl:${lwjglVersion}:natives-macos"

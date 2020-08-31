@@ -117,6 +117,7 @@ public abstract class LwjglWindow extends LwjglContext implements Runnable {
             glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
             glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
         });
+        //TREVOR: Vulkan here
     }
 
     protected final AtomicBoolean needClose = new AtomicBoolean(false);
@@ -202,18 +203,21 @@ public abstract class LwjglWindow extends LwjglContext implements Runnable {
 
         final String renderer = settings.getRenderer();
 
+        //TREVOR: Vulkan here
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_TRUE);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
         RENDER_CONFIGS.computeIfAbsent(renderer, s -> () -> {
             glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_FALSE);
             glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_ANY_PROFILE);
+            //TREVOR: Vulkan here
             glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
             glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
         }).run();
 
         if (settings.getBoolean("RendererDebug")) {
             glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
+            //TREVOR: Vulkan here
         }
 
         if (settings.isGammaCorrection()) {

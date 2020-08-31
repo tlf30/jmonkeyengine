@@ -210,6 +210,16 @@ public final class AppSettings extends HashMap<String, Object> {
     public static final String LWJGL_OPENGL45 = "LWJGL-OpenGL45";
 
     /**
+     * Use LWJGL as the display system and force using the Vulkan renderer.
+     * <p>
+     * If the underlying system does not support Vulkan, then the context
+     * initialization will throw an exception.
+     *
+     * @see AppSettings#setRenderer(java.lang.String)
+     */
+    public static final String LWJGL_VULKAN = "LWJGL-Vulkan";
+
+    /**
      * Use the LWJGL OpenAL based renderer for audio capabilities.
      *
      * @see AppSettings#setAudioRenderer(java.lang.String)
